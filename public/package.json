@@ -1,0 +1,16 @@
+{
+  "name": "qsr-beverages-electron",
+  "version": "0.0.1",
+  "description": "Electron container for QSR App",
+  "main": "./electron.js",
+  "author": "Jordon de Hoog",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "launch": "electron ./electron.js",
+    "package": "electron-packager . QSRBeverages --all --out ../build --overwrite --icon=./favicon.ico"
+  },
+  "devDependencies": {
+    "electron-packager": "^5.2.1",
+    "electron-prebuilt": "^0.37.2"
+  }
+}
