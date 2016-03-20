@@ -44,6 +44,8 @@ var commonPlugins = [
     }),
 ]
 
+var fonts
+
 module.exports = {
   devtool: isProduction ? 'source-map' : 'inline-source-map',
   context: __dirname,
@@ -57,6 +59,9 @@ module.exports = {
     chunkFilename: 'dist/[name]-[chunkhash:6].js'
   },
   module: {
+    preLoaders: [
+      {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
+    ],
     loaders: [{
       test: /\.tpl.html$/,
       loader: 'ngtemplate?relativeTo=' + (path.resolve(__dirname, './src/client')) + '/!html-loader'
@@ -74,11 +79,17 @@ module.exports = {
       test: [/fontawesome-webfont\.svg/, /fontawesome-webfont\.eot/, /fontawesome-webfont\.ttf/, /fontawesome-webfont\.woff/, /fontawesome-webfont\.woff2/],
       loader: 'file?name=dist/fonts/[name].[ext]'
     }, {
+      test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+      loader: 'url-loader?name=dist/fonts/[name].[ext]&limit=100000'
+    }, {
       test: /\.png$/,
       loader: 'url-loader?name=dist/images/[hash:6]-[name].png&limit=100000&mimetype=image/png'
     }, {
       test: /\.jpg$/,
       loader: 'file-loader?name=dist/images/[name].[ext]'
+    },{
+      test: /\.json$/,
+      loader: 'file?name=dist/json/[name].[ext]'
     }]
   },
   progress: true,

@@ -8,14 +8,14 @@
 import angular from 'angular';
 
 import core from '../core/core.module';
-import ui from '../ui/ui.module';
+import menu from '../menu/menu.module';
 
 import routes from './main.routes';
 import mainComponent from './main.component';
 
 const dependencies = [
   core,
-  ui
+  menu
 ];
 
 const mod =

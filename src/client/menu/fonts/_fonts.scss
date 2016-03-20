@@ -1,0 +1,15 @@
+/**
+ * Import all of the font files here so that webpack will bundle them.
+ * To use in other scss files import the `_mixin.scss` file.
+ */
+
+@import '../../main/_vars';
+
+// Bold
+@include font-face(PopplLaudatio-Medium, './PopplLaudatio-Medium', 700, normal);
+
+// Medium
+@include font-face(PopplLaudatio-Medium, './PopplLaudatio-Medium', 400, normal);
+
+// Regular
+@include font-face(PopplLaudatio-Regular, './PopplLaudatio-Regular', 400, normal);

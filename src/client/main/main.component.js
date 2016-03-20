@@ -6,14 +6,21 @@ import './main.scss';
 
 /* eslint indent: 0 */
 const template = [
-  '<div>',
-    'Hello World',
-  '</div>'
+  '<menu-list items-left="$ctrl.data.left" items-right="$ctrl.data.right"></menu-list>'
 ].join('');
+
+/** @ngInject */
+function controller($scope, menuData) {
+  menuData.getMenuData()
+    .then(data => (this.data = data));
+
+  // menuData.enablePolling();
+}
 
 const mainComponent = {
   bindings: {},
-  template
+  template,
+  controller
 };
 
 export default mainComponent;

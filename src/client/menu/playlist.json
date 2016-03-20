@@ -1,0 +1,54 @@
+{
+  "title": "QSR Beverages",
+  "subtitle": "Café Favourites",
+  "items": [
+    {
+      "id": "Coffee",
+      "product": "Coffee",
+      "english_name": "Coffee",
+      "sub_text": "Available in Decaf",
+      "prices": [2.69, 2.69, 4.49, 2.69, 4.49],
+      "image": ""
+    },
+    {
+      "id": "Tea",
+      "product": "Tea",
+      "english_name": "",
+      "sub_text": "Steeped • Specialty Tea",
+      "prices": [1.24, 1.24, 1.33, 1.52, 1.71],
+      "image": ""
+    },
+    {
+      "id": "French_Vanilla_English_Toffee",
+      "product": "French Vanilla or English Toffee",
+      "english_name": "French Vanilla or English Toffee",
+      "sub_text": "",
+      "prices": [1.48, 1.48, 1.57, 1.85, 2.14],
+      "image": "images/french_vanilla_english_toffee.png"
+    },
+    {
+      "id": "Hot_Chocolate",
+      "product": "Hot Chocolate",
+      "english_name": "Hot Chocolate",
+      "sub_text": "Regular • White",
+      "prices": [1.24, 1.24, 1.33, 1.52, 1.71],
+      "image": "images/hot_chocolate.png"
+    },
+    {
+      "id": "Café_Mocha",
+      "product": "Café Mocha",
+      "english_name": "Café Mocha",
+      "sub_text": "",
+      "prices": [1.67, 1.67, 1.81, 2.14, 2.33],
+      "image": "images/cafe_mocha.png"
+    },
+    {
+      "id": "French_Vanilla_Supreme",
+      "product": "French Vanilla Supreme",
+      "english_name": "French Vanilla Supreme",
+      "sub_text": "",
+      "prices": [1.48, 1.48, 1.57, 1.85, 2.14],
+      "image": "images/french_vanilla_supreme.png"
+    }
+  ]
+}

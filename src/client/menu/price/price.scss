@@ -1,0 +1,17 @@
+$colorPriceValue: #8a582c;
+$colorPriceSize: #3a1c0f;
+
+menu-price {
+  display: inline-block;
+  text-align: center;
+  padding-right: 1rem;
+  div {
+    display: inline;
+    color: $colorPriceValue;
+  }
+  .price_size {
+    color: $colorPriceSize;
+    display: block;
+    font-size: 0.6em;
+  }
+}

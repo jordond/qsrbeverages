@@ -1,0 +1,17 @@
+@mixin PopplLaudatio-Bold {
+  font-family: 'PopplLaudatio-Medium', arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin PopplLaudatio-Medium {
+  font-family: 'PopplLaudatio-Medium', arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin PopplLaudatio-Regular {
+  font-family: 'PopplLaudatio-Regular', arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

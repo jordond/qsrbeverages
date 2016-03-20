@@ -1,0 +1,31 @@
+@import '../fonts/_mixins';
+
+$colorItemTitle: #000000;
+$colorItemSubTitle: #3a1c0f;
+
+.item {
+  .item_content {
+    >h4 {
+      margin-bottom: -5px;
+    }
+    .item_title {
+      color: $colorItemTitle;
+      font-weight: bold;
+      font-size: 2.0rem;
+      @include PopplLaudatio-Bold;
+    }
+    .item_subtitle {
+      color: $colorItemSubTitle;
+      font-size: 1.5rem;
+      @include PopplLaudatio-Regular;
+    }
+  }
+  .item_price_list {
+    @include PopplLaudatio-Medium;
+    list-style-type: none;
+    margin-bottom: 1rem;
+    li {
+      display: inline-block;
+    }
+  }
+}
