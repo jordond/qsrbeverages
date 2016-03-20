@@ -1,7 +1,7 @@
 {
   "title": "QSR Beverages",
   "subtitle": "Café Favourites",
-  "large_display": "images/coffee_tea_large.png",
+  "large_image": "images/coffee_tea_large.png",
   "items": [
     {
       "id": "Coffee",

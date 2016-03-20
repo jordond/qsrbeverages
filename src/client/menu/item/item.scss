@@ -6,6 +6,10 @@ $colorItemSubTitle: #3a1c0f;
 .item {
   overflow: auto;
   .item_content {
+    padding-left: 1rem;
+    &.no_image {
+      width: 100%;
+    }
     >h4 {
       margin-bottom: 0;
     }

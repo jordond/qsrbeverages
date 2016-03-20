@@ -8,16 +8,18 @@ class MenuDataService {
   /** @ngInject */
   constructor($http, $interval) {
     privates.set(this, { $http, $interval, polling: undefined });
+    this.playlist = {};
+    this.getMenuData();
   }
 
   getMenuData() {
     return privates.get(this).$http
       .get(menuDataUrl)
       .then(response => {
-        const playlist = {};
-        playlist.left = response.data.items.filter((item) => item.id === 'Coffee' || item.id === 'Tea');
-        playlist.right = response.data.items.filter((item) => item.id !== 'Coffee' && item.id !== 'Tea');
-        return playlist;
+        this.playlist.largeImage = response.data.large_image;
+        this.playlist.left = response.data.items.filter((item) => item.id === 'Coffee' || item.id === 'Tea');
+        this.playlist.right = response.data.items.filter((item) => item.id !== 'Coffee' && item.id !== 'Tea');
+        return this.playlist;
       })
       .catch(err => console.error('menuDataService: get failed', err));
   }

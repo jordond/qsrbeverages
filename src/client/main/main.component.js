@@ -8,18 +8,19 @@ import './main.scss';
 const template = [
   '<div class="container">',
     '<menu-list ',
-      'items-left="$ctrl.data.left" ',
-      'items-right="$ctrl.data.right">',
+      'large-image="{{$ctrl.playlist.largeImage}}" ',
+      'items-left="$ctrl.playlist.left" ',
+      'items-right="$ctrl.playlist.right">',
     '</menu-list>',
   '</div>'
 ].join('');
 
+
 /** @ngInject */
 function controller($scope, menuData) {
-  menuData.getMenuData()
-    .then(data => (this.data = data));
+  this.playlist = menuData.playlist;
 
-  // menuData.enablePolling();
+  menuData.enablePolling();
 }
 
 const mainComponent = {

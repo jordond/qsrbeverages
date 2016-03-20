@@ -6,7 +6,7 @@ const template = [
     '<div class="item_image three columns" ng-show="$ctrl.item.image">',
       '<img class="u-max-full-width" ng-src="{{$ctrl.item.image}}">',
     '</div>',
-    '<div class="item_content nine columns">',
+    '<div class="item_content nine columns" ng-class="{no_image: !$ctrl.item.image}">',
       '<h4 class="item_title">',
         '{{$ctrl.item.english_name}}',
       '</h3>',
