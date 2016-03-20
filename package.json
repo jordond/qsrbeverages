@@ -17,7 +17,7 @@
     "hook-install": "precommit install",
     "hook-remove": "precommit remove",
     "launch": "electron ./public/electron.js",
-    "package": "electron-packager ./public/ QSRBeverages --platform=win32 --arch=ia32 --out ./build --overwrite --icon=./public/favicon.ico"
+    "package": "electron-packager ./public/ QSRBeverages --platform=win32 --platform=linux --arch=ia32 --out ./build --overwrite --icon=./public/favicon.ico"
   },
   "precommit": [
     "npm run lint"

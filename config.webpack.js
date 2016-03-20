@@ -44,8 +44,6 @@ var commonPlugins = [
     }),
 ]
 
-var fonts
-
 module.exports = {
   devtool: isProduction ? 'source-map' : 'inline-source-map',
   context: __dirname,

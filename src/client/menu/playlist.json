@@ -1,6 +1,7 @@
 {
   "title": "QSR Beverages",
   "subtitle": "Café Favourites",
+  "large_display": "images/coffee_tea_large.png",
   "items": [
     {
       "id": "Coffee",
@@ -13,7 +14,7 @@
     {
       "id": "Tea",
       "product": "Tea",
-      "english_name": "",
+      "english_name": "Tea",
       "sub_text": "Steeped • Specialty Tea",
       "prices": [1.24, 1.24, 1.33, 1.52, 1.71],
       "image": ""

@@ -1,18 +1,17 @@
 import menuDataUrl from './playlist.json';
 
-const pollingIntervalInMillis = 1000 * 3; // Three seconds
+const defaultPollingIntervalInMillis = 1000 * 3; // Three seconds
 
-const deps = new Map();
+const privates = new WeakMap();
 
 class MenuDataService {
   /** @ngInject */
   constructor($http, $interval) {
-    deps.set('$http', $http);
-    deps.set('$interval', $interval);
+    privates.set(this, { $http, $interval, polling: undefined });
   }
 
   getMenuData() {
-    return deps.get('$http')
+    return privates.get(this).$http
       .get(menuDataUrl)
       .then(response => {
         const playlist = {};
@@ -23,19 +22,19 @@ class MenuDataService {
       .catch(err => console.error('menuDataService: get failed', err));
   }
 
-  enablePolling(interval = pollingIntervalInMillis) {
-    if (!this.polling) {
-      this.polling = deps.get('$interval')(() => {
-        this.getMenuData();
-      }, interval);
+  enablePolling(interval = defaultPollingIntervalInMillis) {
+    let polling = privates.get(this).polling;
+    if (!polling) {
+      polling = privates.get(this).$interval(() => this.getMenuData(), interval);
       console.log(`enablePolling: Polling data file every ${interval / 1000} seconds`);
     }
   }
 
   disablePolling() {
-    if (this.polling) {
-      deps.get('$interval').cancel(this.polling);
-      this.polling = undefined;
+    let polling = privates.get(this).polling;
+    if (polling) {
+      privates.get(this).$interval.cancel(polling);
+      polling = undefined;
       console.log('disablePolling: Disabled the data polling');
     }
   }

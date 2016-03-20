@@ -3,10 +3,10 @@ import './item.scss';
 /* eslint indent: 0 */
 const template = [
   '<div class="item">',
-    '<div class="item_image two columns" ng-show="$ctrl.item.image">',
+    '<div class="item_image three columns" ng-show="$ctrl.item.image">',
       '<img class="u-max-full-width" ng-src="{{$ctrl.item.image}}">',
     '</div>',
-    '<div class="item_content ten columns">',
+    '<div class="item_content nine columns">',
       '<h4 class="item_title">',
         '{{$ctrl.item.english_name}}',
       '</h3>',
@@ -17,6 +17,7 @@ const template = [
         '<li ng-repeat="price in $ctrl.item.prices track by $index">',
           '<menu-price value="price" index="$index"></menu-price>',
         '</li>',
+        '<hr>',
       '</ul>',
     '</div>',
   '</div>'

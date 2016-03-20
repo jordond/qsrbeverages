@@ -10,7 +10,7 @@ const sizes = [
 
 /* eslint indent: 0 */
 const template = [
-  '<div class="price_dollar">{{$ctrl.value.dollars}}</div>',
+  '<div class="price_dollars">{{$ctrl.value.dollars}}</div>',
   '<div class="price_cents">{{$ctrl.value.cents}}</div>',
   '<div class="price_size">{{$ctrl.size}}</div>'
 ].join('');

@@ -6,8 +6,15 @@ menu-price {
   text-align: center;
   padding-right: 1rem;
   div {
-    display: inline;
+    display: inline-block;
     color: $colorPriceValue;
+  }
+  .price_dollars {
+    font-size: 3rem;
+  }
+  .price_cents, .price_size {
+    position: relative;
+    top: -1rem;
   }
   .price_size {
     color: $colorPriceSize;

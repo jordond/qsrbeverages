@@ -6,7 +6,12 @@ import './main.scss';
 
 /* eslint indent: 0 */
 const template = [
-  '<menu-list items-left="$ctrl.data.left" items-right="$ctrl.data.right"></menu-list>'
+  '<div class="container">',
+    '<menu-list ',
+      'items-left="$ctrl.data.left" ',
+      'items-right="$ctrl.data.right">',
+    '</menu-list>',
+  '</div>'
 ].join('');
 
 /** @ngInject */

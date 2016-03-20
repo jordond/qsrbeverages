@@ -4,14 +4,16 @@ $colorItemTitle: #000000;
 $colorItemSubTitle: #3a1c0f;
 
 .item {
+  overflow: auto;
   .item_content {
     >h4 {
-      margin-bottom: -5px;
+      margin-bottom: 0;
     }
     .item_title {
       color: $colorItemTitle;
       font-weight: bold;
       font-size: 2.0rem;
+      line-height: 2.0rem;
       @include PopplLaudatio-Bold;
     }
     .item_subtitle {
@@ -23,9 +25,34 @@ $colorItemSubTitle: #3a1c0f;
   .item_price_list {
     @include PopplLaudatio-Medium;
     list-style-type: none;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    position: relative;
+    bottom: 0.5rem;
     li {
       display: inline-block;
+      margin: 0;
+      &:first-of-type {
+        padding-left: 0.5rem;
+      }
+    }
+    hr {
+      width: 80%;
+      position: relative;
+      bottom: 0.5rem;
+      margin: 0;
+      border: 0;
+      height: 2px;
+      background: #eeeeee;
+      background: linear-gradient(right, hsla(0,0%,0%,0) 0%, hsla(43, 28%, 78%,1) 75%, hsla(0,0%,0%,0) 100%);
+    }
+  }
+}
+
+// Disable the border using ngClass
+.last {
+  .item_price_list {
+    hr {
+      display: none;
     }
   }
 }
