@@ -1,37 +1,16 @@
 .controls {
-  background: #eeeeee;
-  padding: 10px;
-  display: inline-block;
-  height: 20px;
-  width: auto;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-
-  >i {
-    display: inline-block;
-    width: 1em;
-    position: relative;
-    left: 5px;
-    bottom: 6px;
-    padding: 5px;
-  }
-
-  .bar {
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    visibility: hidden;
-    width: 1px;
-    transition: width 1s ease-in-out, visibility 1s linear;
-
-    &.extended {
-      width: 600px;
-      visibility: visible;
-    }
-
+  padding-top: 2%;
+  .icons {
+    list-style: none;
+    padding-left: 4%;
     .icon {
-      display: inline-block;
-      padding-left: 50px;
+      cursor: pointer;
+      i {
+        font-size: 2.0rem;
+      }
+      span {
+        padding-left: 5%;
+      }
     }
   }
 }

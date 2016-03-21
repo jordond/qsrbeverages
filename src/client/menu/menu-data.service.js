@@ -8,7 +8,7 @@ class MenuDataService {
   /** @ngInject */
   constructor($http, $interval) {
     privates.set(this, { $http, $interval });
-    this.playlist = {};
+    this.playlist = { data: {} };
     this.polling = {};
     this.getMenuData();
   }
@@ -18,12 +18,13 @@ class MenuDataService {
       .get(menuDataUrl)
       .then(response => {
         if (response.data) {
+          // TODO Implement better way to split, possibly on truthy item image?
           const filteredItems = {
             left: response.data.items.filter((item) => item.id === 'Coffee' || item.id === 'Tea'),
             right: response.data.items.filter((item) => item.id !== 'Coffee' && item.id !== 'Tea')
           };
           response.data.items = filteredItems;
-          Object.assign(this.playlist, response.data);
+          Object.assign(this.playlist.data, response.data);
         }
         return this.playlist;
       })

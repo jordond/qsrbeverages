@@ -1,22 +1,20 @@
 <div class="controls">
-  <i class="fa"
-     ng-click="$ctrl.barExtended = !$ctrl.barExtended"
-     ng-class="$ctrl.barExtended ? 'fa-chevron-right' : 'fa-chevron-down'"></i>
-  <div class="bar" ng-class="{extended: $ctrl.barExtended}">
-    <div class="icon refresh" ng-click="$ctrl.toggleRefresh()">
-      <i class="fa fa-refresh" ng-class="{'fa-spin': $ctrl.isRefreshing.interval}"></i>
-    </div>
-    <div class="icon prices" ng-click="$ctrl.togglePrices()">
-      <i class="fa fa-usd"></i>
-    </div>
-    <div class="icon random-available" ng-click="$ctrl.toggleAvailable()">
-      <i class="fa" ng-class="$ctrl.availableToggled ? 'fa-eye-slash' : 'fa-eye'"></i>
-    </div>
-    <div class="icon editor" ng-click="$ctrl.showEditor()">
-      <i class="fa fa-pencil-square-o"></i>
-    </div>
-    <div class="icon help" ng-click="$ctrl.showHelp()">
-      <i class="fa fa-question"></i>
-    </div>
-  </div>
+  <ul class="icons">
+    <li class="icon refresh" ng-click="$ctrl.toggleRefresh()">
+      <i class="fa fa-fw fa-refresh" ng-class="{'fa-spin': $ctrl.isRefreshing.interval}"></i>
+      <span>Auto reload the playlist.json</span>
+    </li>
+    <li class="icon prices" ng-click="$ctrl.togglePrices()">
+      <i class="fa fa-fw fa-usd"></i>
+      <span>Toggle the prices</span>
+    </li>
+    <li class="icon random-available" ng-click="$ctrl.toggleAvailable()">
+      <i class="fa fa-fw" ng-class="$ctrl.availableToggled ? 'fa-eye-slash' : 'fa-eye'"></i>
+      <span>Toggle a random products availability</span>
+    </li>
+    <li class="icon editor" ng-click="$ctrl.toggleEditor()">
+      <i class="fa fa-fw fa-pencil-square-o"></i>
+      <span>Toggle the editor</span>
+    </li>
+  </ul>
 </div>

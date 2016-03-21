@@ -7,18 +7,29 @@ import './main.scss';
 /* eslint indent: 0 */
 const template = [
   '<div class="container">',
-    '<titles title="$ctrl.playlist.title" subtitle="$ctrl.playlist.subtitle"></titles>',
-    '<menu-list playlist="$ctrl.playlist"></menu-list>',
+    '<titles title="$ctrl.playlist.data.title" subtitle="$ctrl.playlist.data.subtitle"></titles>',
+    '<menu-list playlist="$ctrl.playlist.data"></menu-list>',
   '</div>',
   '<div class="panel-toggle" ng-click="$ctrl.panelIsVisible = !$ctrl.panelIsVisible">',
     '<i class="fa fa-cogs"></i>',
   '</div>',
-  '<panel title="Edit playlist data" visible="$ctrl.panelIsVisible"><p>This is a test</p></panel>'
+  '<panel title="Tools" visible="$ctrl.panelIsVisible">',
+    '<controls show-editor="$ctrl.editorVisible = !$ctrl.editorVisible"></controls>',
+    '<ng-jsoneditor ng-class="{isVisible: $ctrl.editorVisible}" ',
+      'ng-model="$ctrl.playlist.data" options="$ctrl.jsonEditorOptions">',
+    '</ng-jsoneditor>',
+  '</panel>'
 ].join('');
 
 /** @ngInject */
 function controller(menuDataService) {
+  const jsonEditorOptions = {
+    mode: 'form',
+    search: false
+  };
+
   this.playlist = menuDataService.playlist;
+  this.jsonEditorOptions = jsonEditorOptions;
 
   menuDataService.enablePolling(3000);
 }
