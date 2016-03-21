@@ -7,7 +7,14 @@ const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 1280, height: 720});
+  mainWindow = new BrowserWindow({
+    width: 1000,
+    height: 554,
+    center: true,
+    resize: false,
+    autoHideMenuBar: true,
+    title: 'QSR Beverages'
+  });
 
   mainWindow.loadURL('file://' + __dirname + '/index.html');
 
