@@ -1,6 +1,16 @@
 .menuList {
-  .row {
-    display: inline-block;
+  padding: 1rem 0 5rem 0;
+  .left {
+    position: relative;
+    top: 50%;
+  }
+  .menuList_image {
+    padding-top: 2rem;
+    padding-left: 0.5rem;
+    width: 25%;
+  }
+  .menuList_left {
+    padding-top: 7rem;
   }
   .columns {
     margin: 0;

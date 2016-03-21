@@ -16,9 +16,12 @@ class MenuDataService {
     return privates.get(this).$http
       .get(menuDataUrl)
       .then(response => {
-        this.playlist.largeImage = response.data.large_image;
-        this.playlist.left = response.data.items.filter((item) => item.id === 'Coffee' || item.id === 'Tea');
-        this.playlist.right = response.data.items.filter((item) => item.id !== 'Coffee' && item.id !== 'Tea');
+        const filteredItems = {
+          left: response.data.items.filter((item) => item.id === 'Coffee' || item.id === 'Tea'),
+          right: response.data.items.filter((item) => item.id !== 'Coffee' && item.id !== 'Tea')
+        };
+        response.data.items = filteredItems;
+        Object.assign(this.playlist, response.data);
         return this.playlist;
       })
       .catch(err => console.error('menuDataService: get failed', err));
@@ -28,7 +31,7 @@ class MenuDataService {
     let polling = privates.get(this).polling;
     if (!polling) {
       polling = privates.get(this).$interval(() => this.getMenuData(), interval);
-      console.log(`enablePolling: Polling data file every ${interval / 1000} seconds`);
+      console.log(`enablePolling: Polling data file every ${interval / 1000} second${(interval > 1000) ? 's' : ''}`);
     }
   }
 

@@ -13,6 +13,7 @@ import 'normalize.css/normalize';
 import ngAnimate from 'angular-animate';
 import ngUiRouter from 'angular-ui-router';
 
+import uiModule from '../ui/ui.module';
 import config from './core.config';
 
 const dependencies = [
@@ -20,6 +21,7 @@ const dependencies = [
   ngAnimate,
 
   /* Cross-app modules */
+  uiModule,
 
   /* 3rd party modules */
   ngUiRouter

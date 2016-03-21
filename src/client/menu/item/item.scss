@@ -5,6 +5,11 @@ $colorItemSubTitle: #3a1c0f;
 
 .item {
   overflow: auto;
+  .item_image {
+    img {
+      width: 88%;
+    }
+  }
   .item_content {
     padding-left: 1rem;
     &.no_image {

@@ -1,0 +1,31 @@
+@import '../../menu/fonts/_mixins';
+
+$colorTitleRed:   #ce2d2c;
+$colorTitleBrown:   #391212;
+
+.titles_container {
+  .titles {
+    @include PopplLaudatio-Regular;
+    display: inline-block;
+    color: $colorTitleBrown;
+  }
+  .title {
+    font-size: 5rem;
+    width: 64%;
+    .word {
+      display: inline;
+        padding-right: 1rem;
+      &:first-of-type {
+        padding-left: 1rem;
+        padding-right: 1.5rem; // Due to italics
+        color: $colorTitleRed;
+        font-style: italic;
+        font-weight: bold;
+      }
+    }
+  }
+  .subtitle {
+    width: 36%;
+    font-size: 2.5rem;
+  }
+}

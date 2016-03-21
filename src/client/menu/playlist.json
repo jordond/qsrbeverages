@@ -2,8 +2,10 @@
   "title": "QSR Beverages",
   "subtitle": "Café Favourites",
   "large_image": "images/coffee_tea_large.png",
+  "prices": true,
   "items": [
     {
+      "available": true,
       "id": "Coffee",
       "product": "Coffee",
       "english_name": "Coffee",
@@ -12,6 +14,7 @@
       "image": ""
     },
     {
+      "available": true,
       "id": "Tea",
       "product": "Tea",
       "english_name": "Tea",
@@ -20,6 +23,7 @@
       "image": ""
     },
     {
+      "available": true,
       "id": "French_Vanilla_English_Toffee",
       "product": "French Vanilla or English Toffee",
       "english_name": "French Vanilla or English Toffee",
@@ -28,6 +32,7 @@
       "image": "images/french_vanilla_english_toffee.png"
     },
     {
+      "available": true,
       "id": "Hot_Chocolate",
       "product": "Hot Chocolate",
       "english_name": "Hot Chocolate",
@@ -36,6 +41,7 @@
       "image": "images/hot_chocolate.png"
     },
     {
+      "available": true,
       "id": "Café_Mocha",
       "product": "Café Mocha",
       "english_name": "Café Mocha",
@@ -44,6 +50,7 @@
       "image": "images/cafe_mocha.png"
     },
     {
+      "available": true,
       "id": "French_Vanilla_Supreme",
       "product": "French Vanilla Supreme",
       "english_name": "French Vanilla Supreme",

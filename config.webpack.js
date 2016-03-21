@@ -81,7 +81,7 @@ module.exports = {
       loader: 'url-loader?name=dist/fonts/[name].[ext]&limit=100000'
     }, {
       test: /\.png$/,
-      loader: 'url-loader?name=dist/images/[hash:6]-[name].png&limit=100000&mimetype=image/png'
+      loader: 'url-loader?name=dist/images/[hash:6]-[name].png&limit=1000&mimetype=image/png'
     }, {
       test: /\.jpg$/,
       loader: 'file-loader?name=dist/images/[name].[ext]'
