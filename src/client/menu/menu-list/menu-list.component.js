@@ -1,3 +1,8 @@
+/**
+ * MenuList Component
+ *
+ * Contains all of the item components, and the featured image
+ */
 import './menu-list.scss';
 
 /* eslint indent: 0 */

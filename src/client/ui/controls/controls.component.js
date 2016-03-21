@@ -1,3 +1,8 @@
+/**
+ * Controls Component
+ *
+ * Displays a list of toggle controls.
+ */
 import './controls.scss';
 import templateUrl from './controls.tpl.html';
 
@@ -5,7 +10,10 @@ import templateUrl from './controls.tpl.html';
 function controller(menuDataService) {
   // Refresh logic
   this.isRefreshing = menuDataService.polling;
-  this.toggleRefresh = () => menuDataService.togglePolling();
+  this.toggleRefresh = () => {
+    menuDataService.togglePolling();
+    this.availableToggled = false;
+  };
 
   // Toggle prices
   this.togglePrices = () => {
@@ -19,6 +27,7 @@ function controller(menuDataService) {
   this.toggleAvailable = () => {
     menuDataService.disablePolling();
     if (lastIndex === -1) {
+      // Choose random item to disable
       lastIndex = Math.floor(Math.random() * (3 - 0 + 1)) + 0;
       menuDataService.playlist.data.items.right[lastIndex].available = false;
     } else {

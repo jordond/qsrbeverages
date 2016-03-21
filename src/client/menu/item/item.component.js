@@ -1,3 +1,10 @@
+/**
+ * Item Component
+ *
+ * Build the item with it's image, titles, and pricing information.
+ *
+ * The array of price values is converted into price components
+ */
 import './item.scss';
 
 /* eslint indent: 0 */

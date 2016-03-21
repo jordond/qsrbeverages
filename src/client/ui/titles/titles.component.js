@@ -1,3 +1,9 @@
+/**
+ * Titles Component
+ *
+ * Instead of hardcoding the two titles, they can be dynamically generated.
+ * The first word in `$ctrl.title` will be red and italic.
+ */
 import './titles.scss';
 
 /* eslint indent: 0 */

@@ -3,6 +3,8 @@
  * @see https://github.com/angular-tools/ng-jsoneditor
  *
  * This package is not available on NPM, so I have included it manually.
+ *
+ * Minor edits were needed to be able to work with webpack
  */
 
 /* eslint-disable */

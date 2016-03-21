@@ -1,5 +1,5 @@
 /**
- * Module which contains some ui elements
+ * Contains components that make up the non-menu elements
  */
 import angular from 'angular';
 
@@ -7,8 +7,8 @@ import angular from 'angular';
 import './lib/ng-jsoneditor';
 
 /** UI components */
-import titlesComponent from './titles/titles.component';
 import titlesFilter from './titles/word.filter';
+import titlesComponent from './titles/titles.component';
 import panelComponent from './panel/panel.component';
 import controlsComponent from './controls/controls.component';
 
@@ -19,8 +19,8 @@ const dependencies = [
 const mod =
   angular
     .module('app.ui', dependencies)
-    .component('titles', titlesComponent)
     .filter('words', titlesFilter)
+    .component('titles', titlesComponent)
     .component('panel', panelComponent)
     .component('controls', controlsComponent);
 

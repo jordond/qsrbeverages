@@ -1,3 +1,11 @@
+/**
+ * MenuData Service
+ *
+ * Makes a request for the playlist.json data file.
+ * Assigns the response to `this.playlist.data`.
+ *
+ * Polling is available in order to grab changes to the `public/dist/json/playlist.json`
+ */
 import menuDataUrl from './playlist.json';
 
 const defaultPollingIntervalInMillis = 1000 * 3; // Three seconds
@@ -13,9 +21,16 @@ class MenuDataService {
     this.getMenuData();
   }
 
+  /**
+   * Grab the data from the playlist.json
+   *
+   * Filter the items array into two seperate arrays.
+   * Merge object with `this.playlist.data` in order to maintain object reference
+   *
+   * @returns object Playlist data
+   */
   getMenuData() {
-    return privates.get(this).$http
-      .get(menuDataUrl)
+    return privates.get(this).$http.get(menuDataUrl)
       .then(response => {
         if (response.data) {
           // TODO Implement better way to split, possibly on truthy item image?
@@ -31,6 +46,11 @@ class MenuDataService {
       .catch(err => console.error('menuDataService: get failed', err));
   }
 
+  /**
+   * Poll the `playlist.json` data file every given interval
+   *
+   * @param number  interval  (optional)  Time to wait before next request
+   */
   enablePolling(interval = defaultPollingIntervalInMillis) {
     if (!this.polling.interval) {
       this.polling.interval = privates.get(this).$interval(() => this.getMenuData(), interval);
@@ -38,6 +58,9 @@ class MenuDataService {
     }
   }
 
+  /**
+   * Clear the interval object and disable the polling
+   */
   disablePolling() {
     if (this.polling.interval) {
       privates.get(this).$interval.cancel(this.polling.interval);
@@ -46,6 +69,9 @@ class MenuDataService {
     }
   }
 
+  /**
+   * Toggle the polling on or off
+   */
   togglePolling() {
     if (this.polling.interval) {
       this.disablePolling();

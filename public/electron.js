@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 
 const electron = require('electron');
@@ -6,10 +7,10 @@ const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
 
-function createWindow () {
+function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 554,
+    width: 1024,
+    height: 720,
     center: true,
     resize: false,
     autoHideMenuBar: true,
@@ -18,7 +19,7 @@ function createWindow () {
 
   mainWindow.loadURL('file://' + __dirname + '/index.html');
 
-  mainWindow.on('closed', function() {
+  mainWindow.on('closed', function () {
     mainWindow = null;
   });
 }

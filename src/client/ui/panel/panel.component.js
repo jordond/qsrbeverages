@@ -1,3 +1,11 @@
+/**
+ * Panel Component
+ *
+ * Creates a sliding menu element.
+ * Currently only option is to open on the left.
+ *
+ * Menu opens when $ctrl.visible is true
+ */
 import './panel.scss';
 
 /* eslint indent: 0 */

@@ -1,7 +1,5 @@
 /**
  * Module which contains all the sections of the menu
- *
- * Contains menu submodules for more complex components
  */
 import './fonts/_fonts';
 
