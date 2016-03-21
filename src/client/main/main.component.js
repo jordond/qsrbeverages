@@ -11,6 +11,7 @@ const template = [
     '<menu-list ',
       'playlist="$ctrl.playlist">',
     '</menu-list>',
+    '<controls></controls>',
   '</div>'
 ].join('');
 

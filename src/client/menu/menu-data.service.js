@@ -7,8 +7,9 @@ const privates = new WeakMap();
 class MenuDataService {
   /** @ngInject */
   constructor($http, $interval) {
-    privates.set(this, { $http, $interval, polling: undefined });
+    privates.set(this, { $http, $interval });
     this.playlist = {};
+    this.polling = {};
     this.getMenuData();
   }
 
@@ -30,19 +31,25 @@ class MenuDataService {
   }
 
   enablePolling(interval = defaultPollingIntervalInMillis) {
-    let polling = privates.get(this).polling;
-    if (!polling) {
-      polling = privates.get(this).$interval(() => this.getMenuData(), interval);
+    if (!this.polling.interval) {
+      this.polling.interval = privates.get(this).$interval(() => this.getMenuData(), interval);
       console.log(`enablePolling: Polling data file every ${interval / 1000} second${(interval > 1000) ? 's' : ''}`);
     }
   }
 
   disablePolling() {
-    let polling = privates.get(this).polling;
-    if (polling) {
-      privates.get(this).$interval.cancel(polling);
-      polling = undefined;
+    if (this.polling.interval) {
+      privates.get(this).$interval.cancel(this.polling.interval);
+      this.polling.interval = false;
       console.log('disablePolling: Disabled the data polling');
+    }
+  }
+
+  togglePolling() {
+    if (this.polling.interval) {
+      this.disablePolling();
+    } else {
+      this.enablePolling();
     }
   }
 }

@@ -1,26 +1,23 @@
 import './controls.scss';
+import templateUrl from './controls.tpl.html';
 
-/* eslint indent: 0 */
-const template = [
-  '<div class="titles_container row">',
-    '<div class="titles title">',
-      '<div class="word" ng-repeat="word in $ctrl.title | words">',
-        '{{word}}',
-      '</div>',
-    '</div>',
-    '<div class="titles subtitle">',
-      '{{$ctrl.subtitle}}',
-    '</div>',
-  '</div>'
-].join('');
+/** @ngInject */
+function controller(menuDataService) {
+  // Refresh logic
+  this.isRefreshing = menuDataService.polling;
+  this.toggleRefresh = () => menuDataService.togglePolling();
 
-function controller() {
-
+  // Toggle prices
+  this.togglePrices = () => {
+    menuDataService.disablePolling();
+    const visible = menuDataService.playlist.prices;
+    menuDataService.playlist.prices = !visible;
+  };
 }
 
 const component = {
   bindings: {},
-  template,
+  templateUrl,
   controller
 };
 
