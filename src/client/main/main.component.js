@@ -8,15 +8,16 @@ import './main.scss';
 const template = [
   '<div class="container">',
     '<titles title="$ctrl.playlist.title" subtitle="$ctrl.playlist.subtitle"></titles>',
-    '<menu-list ',
-      'playlist="$ctrl.playlist">',
-    '</menu-list>',
-    '<controls></controls>',
-  '</div>'
+    '<menu-list playlist="$ctrl.playlist"></menu-list>',
+  '</div>',
+  '<div class="panel-toggle" ng-click="$ctrl.panelIsVisible = !$ctrl.panelIsVisible">',
+    '<i class="fa fa-cogs"></i>',
+  '</div>',
+  '<panel title="Edit playlist data" visible="$ctrl.panelIsVisible"><p>This is a test</p></panel>'
 ].join('');
 
 /** @ngInject */
-function controller($scope, menuDataService) {
+function controller(menuDataService) {
   this.playlist = menuDataService.playlist;
 
   menuDataService.enablePolling(3000);

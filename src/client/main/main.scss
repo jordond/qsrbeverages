@@ -1,7 +1,9 @@
+$panelToggleSize: 50px;
+
 body {
   margin: 0 auto;
   width:100%;
-  background: url('./images/main_bg.jpg') no-repeat center center fixed;
+  background-color: #fff1d6;
 }
 
 .container {
@@ -12,7 +14,22 @@ body {
 main {
   background: url('./images/main_bg.jpg') no-repeat center center fixed;
   background-size: cover;
-  max-width: 1280px;
-  max-height: 720px;
   min-height: 554px;
+}
+
+.panel-toggle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: 2rem;
+  text-align: center;
+  width: $panelToggleSize;
+  height: $panelToggleSize;
+  cursor: pointer;
+
+  i {
+    text-align: center;
+    vertical-align: middle;
+    line-height: $panelToggleSize;
+  }
 }
