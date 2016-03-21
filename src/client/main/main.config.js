@@ -16,7 +16,14 @@ function getStates() {
 }
 
 /** @ngInject */
-export default function configureStates($stateProvider) {
+export function routes($stateProvider) {
   const states = getStates();
   states.forEach((state) => $stateProvider.state(state.state, state.config));
 }
+
+/** @ngInject */
+export function config($urlRouterProvider, $locationProvider) {
+  $locationProvider.html5Mode(false);
+  $urlRouterProvider.otherwise('/');
+}
+

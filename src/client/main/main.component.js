@@ -15,10 +15,10 @@ const template = [
 ].join('');
 
 /** @ngInject */
-function controller($scope, menuData) {
-  this.playlist = menuData.playlist;
+function controller($scope, menuDataService) {
+  this.playlist = menuDataService.playlist;
 
-  menuData.enablePolling(3000);
+  menuDataService.enablePolling(3000);
 }
 
 const mainComponent = {

@@ -4,7 +4,7 @@ import './menu-list.scss';
 const template = [
   '<div class="menuList row">',
     '<div class="menuList_image left three columns">',
-      '<img class="u-max-full-width" ng-src="{{$ctrl.playlist.large_image}}">',
+      '<img class="u-max-full-width" ng-src="{{$ctrl.playlist.featured_image}}">',
     '</div>',
     '<div class="menuList_left left four columns">',
       '<div class="row" ng-repeat="item in $ctrl.playlist.items.left">',

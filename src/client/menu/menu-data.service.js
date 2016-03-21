@@ -16,12 +16,14 @@ class MenuDataService {
     return privates.get(this).$http
       .get(menuDataUrl)
       .then(response => {
-        const filteredItems = {
-          left: response.data.items.filter((item) => item.id === 'Coffee' || item.id === 'Tea'),
-          right: response.data.items.filter((item) => item.id !== 'Coffee' && item.id !== 'Tea')
-        };
-        response.data.items = filteredItems;
-        Object.assign(this.playlist, response.data);
+        if (response.data) {
+          const filteredItems = {
+            left: response.data.items.filter((item) => item.id === 'Coffee' || item.id === 'Tea'),
+            right: response.data.items.filter((item) => item.id !== 'Coffee' && item.id !== 'Tea')
+          };
+          response.data.items = filteredItems;
+          Object.assign(this.playlist, response.data);
+        }
         return this.playlist;
       })
       .catch(err => console.error('menuDataService: get failed', err));

@@ -68,7 +68,7 @@ app.route('/*')
   });
 
 // Any missing assets will return a 404 instead of index
-app.route('/:url(images:dist|assets|js|fonts|templates)/*')
+app.route('/:url(images:dist|json|js|fonts)/*')
   .get((req, res) => res.sendStatus(404));
 
 /**
