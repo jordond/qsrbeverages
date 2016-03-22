@@ -8,7 +8,7 @@
  */
 import menuDataUrl from './playlist.json';
 
-const defaultPollingIntervalInMillis = 1000 * 3; // Three seconds
+const defaultPollingIntervalInMillis = 1000 * 2; // Two seconds
 
 const privates = new WeakMap();
 

@@ -31,7 +31,7 @@ function controller(menuDataService) {
   this.playlist = menuDataService.playlist;
   this.jsonEditorOptions = jsonEditorOptions;
 
-  menuDataService.enablePolling(2000);
+  menuDataService.enablePolling();
 }
 
 const mainComponent = {

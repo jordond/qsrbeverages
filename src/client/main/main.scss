@@ -15,6 +15,37 @@ main {
   min-height: 544px;
 }
 
+/**
+ * ngAnimate
+ */
+
+// ng-repeat
+.animate-repeat {
+  opacity: 1;
+  &.ng-enter {
+    transition: 1s;
+    opacity: 0;
+  }
+  &.ng-enter-active {
+    opacity: 1;
+  }
+}
+
+// ng-show
+.animate-show {
+  opacity: 1;
+  &.ng-hide {
+    opacity: 0;
+  }
+  &.ng-hide-add, &.ng-hide-remove {
+    transition: all linear 0.5s;
+  }
+}
+
+/**
+ * Panel related css
+ */
+
 $panelToggleSize: 50px;
 
 .panel-toggle {

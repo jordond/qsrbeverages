@@ -5,6 +5,9 @@ $colorItemSubTitle: #3a1c0f;
 
 .item {
   overflow: auto;
+  &.no-prices {
+    min-height: 10rem;
+  }
   .item_image {
     img {
       width: 88%;
