@@ -33,12 +33,14 @@ class MenuDataService {
     return privates.get(this).$http.get(menuDataUrl)
       .then(response => {
         if (response.data) {
-          // TODO Implement better way to split, possibly on truthy item image?
-          const filteredItems = {
-            left: response.data.items.filter((item) => item.id === 'Coffee' || item.id === 'Tea'),
-            right: response.data.items.filter((item) => item.id !== 'Coffee' && item.id !== 'Tea')
-          };
-          response.data.items = filteredItems;
+          // Filter by whether item has an image
+          const items = { left: [], right: [] };
+          for (const item of response.data.items) {
+            /* eslint no-unused-expressions: 0 */
+            item.image ? items.right.push(item) : items.left.push(item);
+          }
+          response.data.items = items;
+
           Object.assign(this.playlist.data, response.data);
         }
         return this.playlist;

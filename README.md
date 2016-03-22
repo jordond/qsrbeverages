@@ -1,12 +1,15 @@
 # Running
 
 ## Without Node & NPM
-1. Open `public/index.html` in a web browser.
-1. ***OR*** Run the executable in `build/QSRBeverages-win32-ia32/QSRBeverages.exe`
+- Run the executable in `build/QSRBeverages-win32-ia32/QSRBeverages.exe`
+- **NOTE** Just opening the `public/index.html` will not work as Angular's $http will fail to load the `playlist.json` file because it does not allow cross-orgin requests.  That is why I have bundled the app in an [Electron](http://electron.atom.io/) shell.
 
 ## With Node & NPM
+1. Run `NODE_ENV=production npm install`
 1. Run `npm start`
 1. Navigate to `http://localhost:8080`
+- ***OR***
+1. Run `npm run launch`
 
 # Build & install from source
 
@@ -17,7 +20,6 @@
 
 ## Standalone Electron shell
 1. Run `npm install`
-1. Run `npm run build`
 1. Run `npm run package`
 1. Run the executeable in `./build/QSRBeverages-*/QSRBeverages.exe`
 

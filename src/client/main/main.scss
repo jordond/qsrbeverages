@@ -12,7 +12,7 @@ body {
 main {
   background: url('./images/main_bg.jpg') no-repeat center center fixed;
   background-size: cover;
-  min-height: 720px;
+  min-height: 544px;
 }
 
 $panelToggleSize: 50px;
@@ -20,7 +20,7 @@ $panelToggleSize: 50px;
 .panel-toggle {
   position: fixed;
   left: 0;
-  top: 80%;
+  top: 85%;
   background-color: #212121;
   border-top-right-radius: 20%;
   border-bottom-right-radius: 20%;
@@ -43,7 +43,7 @@ $panelToggleSize: 50px;
 
 @media (min-height: 721px) {
   .panel-toggle {
-    top: 60%;
+    top: 40%;
   }
 }
 
