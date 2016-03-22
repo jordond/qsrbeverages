@@ -48,7 +48,7 @@ app.use(Express.static(config.dir.static));
 app.use(favicon(path.join(config.dir.static, 'favicon.ico')));
 
 if (config.isProduction) {
-  app.use(morgan('combined', {
+  app.use(morgan('short', {
     skip: (req, res) => res.statusCode < 400
   }));
 } else {
@@ -59,17 +59,12 @@ if (config.isProduction) {
  * Routes
  */
 
-// All unregistered routes should send index
-app.route('/*')
+app.route('/')
   .get((req, res) => {
     res.setHeader('Content-Type', 'text/html');
     fs.createReadStream(path.join(config.dir.static, 'index.html'))
       .pipe(res);
   });
-
-// Any missing assets will return a 404 instead of index
-app.route('/:url(images:dist|json|js|fonts)/*')
-  .get((req, res) => res.sendStatus(404));
 
 /**
  * Start the server

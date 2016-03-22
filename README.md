@@ -5,11 +5,49 @@
 - **NOTE** Just opening the `public/index.html` will not work as Angular's $http will fail to load the `playlist.json` file because it does not allow cross-orgin requests.  That is why I have bundled the app in an [Electron](http://electron.atom.io/) shell.
 
 ## With Node & NPM
-1. Run `NODE_ENV=production npm install`
+1. Run `npm install`
+1. Run `npm run launch`
+- ***OR***
 1. Run `npm start`
 1. Navigate to `http://localhost:8080`
-- ***OR***
-1. Run `npm run launch`
+
+# Structure
+
+```
+bin/                        - Npm start script, launches node server.js
+build/
+  QSRBeverages-win32-ia32   - Contains built Electron exe
+public/
+  dist/                     - Source files compiled to here js,json,etc
+  images/                   - Static images linked from playlist.json
+src/
+  server.js                 - Simple node server to host application
+  client/
+    main/                   - Main application component
+    menu/                   - Contains all menu related components
+      playlist.json         - Data file where app grabs all info
+    ui/                     - Contains all ui components
+```
+
+## Compiled assets
+
+```
+public/
+  images/
+  dist/
+    fonts/
+    images/
+    json/
+      playlist.json         - Data file, changes here will be auto updated in app
+    app-[hash].js           - Compiled source files, hash is added for cache-busting
+    vendor-[hash].js        - All required vendor libs i.e. Angular
+  electron.js               - Electron index file
+  package.json              - Package file required for Electron
+  favicon.ico
+  index.html                - Compiled by webpack
+```
+
+**NOTE** If the application exe is ran the `playlist.json` file is located in `QSRBeverages/resources/app/dist/json`
 
 # Build & install from source
 
